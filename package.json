@@ -3,20 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-airbnb": "^2.5.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "chai": "^4.1.2",
-    "css-loader": "^0.28.11",
-    "mocha": "^5.2.0",
-    "mocha-multi": "^1.0.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4",
-    "sinon": "^6.1.0"
+    "react-scripts": "1.1.4"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js"
@@ -29,6 +18,14 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "sinon": "^6.1.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-airbnb": "^2.5.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   }
 }
