@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+
 import Card from './Card'
 import quotes from './quotes'
 
