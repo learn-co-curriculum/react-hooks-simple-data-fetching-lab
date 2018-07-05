@@ -14,8 +14,8 @@ class App extends Component {
   //Your code here:
 
   componentDidMount() {
+    console.log(" ");
     console.log("App component mounted");
-    console.log("Starting interval timer to add quotes")
     this.addQuote()
     this.interval = setInterval(this.addQuote, 5000)
   }
@@ -28,12 +28,14 @@ class App extends Component {
 
 
 
+
+
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
   render() {
 
     return (
-      <div className="App">
+      <div classNae="App">
         <h1>Quote Wall</h1>
         <button onClick={this.handleClick}>Add Quote</button>
 

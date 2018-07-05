@@ -50,7 +50,7 @@ const quotes = {
   "Brian O'Driscoll": "Knowledge is knowing that a tomato is a fruit. Wisdom is knowing not to put it in a fruit salad.",
   "Jimi Hendrix": "Knowledge speaks but wisdom listens.",
   "James Madison": "The advancement and diffusion of knowledge is the only guardian of true liberty.",
-  "Friedrich Nietzche": "The doer along learneth.",
+  "Friedrich Nietzche": "The doer alone learneth.",
   "Terry Pratchett": "Sometimes it is better to light a flamethrower than curse the darkness.",
   "Thomas Paine": "That which we obtain too easily, we esteem too lightly.",
   "Thurgood Marshall": "Each of you, as an individual, must pick your own goals. Listen to others, but do not become a blind follower.",
