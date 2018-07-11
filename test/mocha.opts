@@ -1,3 +1,4 @@
 --require babel-register
+--no-deprecation
 --timeout 5000
 --bail

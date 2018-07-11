@@ -2,6 +2,14 @@
   "name": "react-component-mounting-lab",
   "version": "0.1.0",
   "private": true,
+  "babel": {
+    "presets": [
+      "airbnb",
+      "env",
+      "stage-0",
+      "react"
+    ]
+  },
   "dependencies": {
     "mocha-multi": "^1.0.1",
     "react": "^16.4.1",
@@ -12,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha",
+    "test": "mocha -w ./test/*.test.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
