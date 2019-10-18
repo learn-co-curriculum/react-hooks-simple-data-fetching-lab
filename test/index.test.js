@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import { spy, stub, useFakeTimers } from 'sinon'
 const fetchMock = require('fetch-mock')
 import Adapter from 'enzyme-adapter-react-16';
-
+import "@babel/polyfill";
 configure({ adapter: new Adapter() });
 
 import App from '../src/App';
