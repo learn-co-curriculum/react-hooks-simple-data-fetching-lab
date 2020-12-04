@@ -1,40 +1,22 @@
-import { expect } from 'chai';
-import React from 'react'
-import fetchMock from 'fetch-mock'
-import { spy } from 'sinon'
-import { configure, shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+import React from 'react';
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import { server } from '../mocks/server'
 
 import App from '../App';
 
-configure({ adapter: new Adapter() });
-
 describe('<App />', () => {
-  let fetchSpy
+  beforeAll(() => server.listen())
+  afterEach(() => server.resetHandlers())
+  afterAll(() => server.close())
 
-  beforeAll(() => {
-    global.fetch = require('node-fetch')
-    fetchMock.get('*', {people: [{name:"Stimpy"}]})
-    fetchSpy = spy(global, "fetch")
-  })
+  it('displays names of the astronauts after fetching', async () => {
+    render(<App />)
 
-  afterAll(() => {
-    fetchMock.restore();
-  })
+    await screen.findByText(/Sergey Ryzhikov/g)
 
-  //tests specific method within a class
-  it('mounts correctly', () => {
-    const appWrapper = shallow(<App />)
-    expect(appWrapper).to.exist
-  });
+    expect(screen.getByText(/Sergey Ryzhikov/g)).toBeInTheDocument()
 
-  it('calls fetch once', () => {
-
-    shallow(<App />);
-
-    expect(fetchSpy.callCount > 0, "Fetch was not called").to.equal(true);
-
-    expect(fetchSpy.firstCall.lastArg).to.equal('http://api.open-notify.org/astros.json')
-
+    expect(screen.getByText(/Victor Glover/g)).toBeInTheDocument()
   })
 })
