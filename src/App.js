@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 function App() {
-  const [peopleInSpace, setPeopleInSpace] = useState([])
+  const [dogPic, setDogPic] = useState(null);
 
   useEffect(() => {
-    fetch('http://api.open-notify.org/astros.json')
-      .then(response => response.json())
-      .then(data => {
-        setPeopleInSpace(data.people)
-      })
-  }, []) 
+    fetch("https://dog.ceo/api/breeds/image/random")
+      .then((response) => response.json())
+      .then((data) => {
+        setDogPic(data.message);
+      });
+  }, []);
   // use an empty dependencies array, so we only run the fetch request ONCE
 
-  return (
-    <div>
-      {peopleInSpace.map(person => person.name)}
-    </div>
-  )
+  if (!dogPic) return <p>Loading...</p>;
+
+  return <img src={dogPic} alt="A Random Dog" />;
 }
 
-export default App
+export default App;
