@@ -9,10 +9,22 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-it("displays the fox image after fetching", async () => {
+it("displays the dog image after fetching", async () => {
   render(<App />);
-
-  expect(screen.findByAltText("A Random Fox").src).toBe(
-    "https://randomfox.ca/images/28.jpg"
+  const img = await screen.findByAltText("A Random Dog");
+  expect(img.src).toBe(
+    "https://images.dog.ceo/breeds/bulldog-english/mami.jpg"
   );
+});
+
+it("displays a loading message before fetching", async () => {
+  render(<App />);
+  expect(screen.queryByText(/Loading/)).toBeInTheDocument();
+
+  const img = await screen.findByAltText("A Random Dog");
+  expect(img.src).toBe(
+    "https://images.dog.ceo/breeds/bulldog-english/mami.jpg"
+  );
+
+  expect(screen.queryByText(/Loading/)).not.toBeInTheDocument();
 });
