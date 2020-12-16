@@ -1,5 +1,5 @@
 {
-  "name": "react-hooks-async-fetch-lab",
+  "name": "react-hooks-simple-data-fetching-lab",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
