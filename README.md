@@ -16,7 +16,7 @@ the tests in this lab:
   image of a dog.
 - Display a `<p>` tag with the text of "Loading..." when the component is first
   rendered
-- After receiving a response from the API, show the dog image in a `<img>` tag,
+- After receiving a response from the API, show the dog image in an `<img>` tag,
   with the `alt` attribute set to "A Random Dog".
 
 ## Resources
